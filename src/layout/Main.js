@@ -17,7 +17,6 @@ const Main = () => {
                     </div>
                 </div>
             </div>
-            {/* <Footer></Footer> */}
         </div>
     );
 };
