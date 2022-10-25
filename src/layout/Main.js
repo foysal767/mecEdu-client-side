@@ -1,9 +1,23 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Header from '../Pages/Shared/Header/Header';
+import RightSideNav from '../Pages/Shared/RightSideNav/RightSideNav';
 
 const Main = () => {
     return (
-        <div>
-            <h1>This is main</h1>
+        <div className='w-10/12 mx-auto'>
+            <Header></Header>
+            <div className='container'>
+                <div className='grid grid-cols-12 gap-2'>
+                    <div className='col-span-9'>
+                        <Outlet></Outlet>
+                    </div>
+                    <div className='col-span-3 hidden lg:block'>
+                        <RightSideNav></RightSideNav>
+                    </div>
+                </div>
+            </div>
+            {/* <Footer></Footer> */}
         </div>
     );
 };
