@@ -6,6 +6,7 @@ const Courses = ({course}) => {
     return (
         <div>
             <h1>Course Name: {title}</h1>
+            <img src={image_url} alt="" />
         </div>
     );
 };
