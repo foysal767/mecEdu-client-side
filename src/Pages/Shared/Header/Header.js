@@ -27,7 +27,7 @@ const Header = () => {
                         <RightSideNav></RightSideNav>
                     </ul>
                 </div>
-                <Link to='/' className='btn btn-ghost normal-case text-xl'>MecEdu</Link>
+                <Link to='/' className='btn btn-ghost normal-case text-xl'><img className='w-10' src="https://www.pngall.com/wp-content/uploads/5/Construction-Engineer.png" alt="" /> MecEdu</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

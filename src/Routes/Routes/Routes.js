@@ -19,17 +19,17 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/courses-details')
+                loader: () => fetch('https://mec-edu-server-foysal767.vercel.app/courses-details')
             },
             {
                 path: '/course-category/:id',
                 element: <CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course-category/${params.id}`)
+                loader: ({ params }) => fetch(`https://mec-edu-server-foysal767.vercel.app/course-category/${params.id}`)
             },
             {
                 path: '/details/:id',
                 element: <CourseInfo></CourseInfo>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://mec-edu-server-foysal767.vercel.app/course/${params.id}`)
             },
             {
                 path: '/faq',

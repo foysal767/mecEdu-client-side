@@ -12,7 +12,7 @@ const RightSideNav = () => {
 
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/all-courses')
+        fetch('https://mec-edu-server-foysal767.vercel.app/all-courses')
         .then(res => res.json())
         .then(data => setCourses(data))
     }, [])
