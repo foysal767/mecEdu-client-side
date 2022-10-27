@@ -1,0 +1,183 @@
+[debug] [2022-10-27T16:04:41.589Z] ----------------------------------------------------------------------
+[debug] [2022-10-27T16:04:41.592Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Laptop point\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-10-27T16:04:41.593Z] CLI Version:   11.15.0
+[debug] [2022-10-27T16:04:41.593Z] Platform:      win32
+[debug] [2022-10-27T16:04:41.593Z] Node Version:  v16.17.1
+[debug] [2022-10-27T16:04:41.606Z] Time:          Thu Oct 27 2022 22:04:41 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-10-27T16:04:41.606Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-27T16:04:41.679Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-27T16:04:41.679Z] > authorizing via signed-in user (uddinmohammadfoysal981@gmail.com)
+[debug] [2022-10-27T16:04:41.679Z] [iam] checking project mecedu-f8fff for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-10-27T16:04:41.681Z] > refreshing access token with scopes: []
+[debug] [2022-10-27T16:04:41.682Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-10-27T16:04:41.683Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-10-27T16:04:42.135Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-10-27T16:04:42.135Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-10-27T16:04:42.156Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions [none]
+[debug] [2022-10-27T16:04:42.156Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions x-goog-quota-user=projects/mecedu-f8fff
+[debug] [2022-10-27T16:04:42.156Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-10-27T16:04:43.765Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions 200
+[debug] [2022-10-27T16:04:43.765Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-10-27T16:04:43.766Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mecedu-f8fff [none]
+[debug] [2022-10-27T16:04:44.489Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mecedu-f8fff 200
+[debug] [2022-10-27T16:04:44.489Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mecedu-f8fff {"projectId":"mecedu-f8fff","projectNumber":"403138194841","displayName":"mecEdu","name":"projects/mecedu-f8fff","resources":{"hostingSite":"mecedu-f8fff"},"state":"ACTIVE","etag":"1_b6e59f49-302c-4f00-aa15-2042330dc630"}
+[info] 
+[info] === Deploying to 'mecedu-f8fff'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-10-27T16:04:44.494Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions [none]
+[debug] [2022-10-27T16:04:44.495Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-10-27T16:04:46.445Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions 200
+[debug] [2022-10-27T16:04:46.445Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions {"name":"projects/403138194841/sites/mecedu-f8fff/versions/cae5a871af1a608e","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[mecedu-f8fff]: beginning deploy... 
+[info] i  hosting[mecedu-f8fff]: found 14 files in build 
+[debug] [2022-10-27T16:04:46.472Z] [hosting] uploading with 200 concurrency
+[debug] [2022-10-27T16:04:46.759Z] [hosting] hash cache [YnVpbGQ] stored for 14 files
+[debug] [2022-10-27T16:04:46.760Z] [hosting][hash queue][FINAL] {"max":278,"min":2,"avg":26.785714285714285,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":285}
+[debug] [2022-10-27T16:04:46.760Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/403138194841/sites/mecedu-f8fff/versions/cae5a871af1a608e:populateFiles [none]
+[debug] [2022-10-27T16:04:46.760Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/403138194841/sites/mecedu-f8fff/versions/cae5a871af1a608e:populateFiles {"files":{"/favicon.ico":"eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9","/logo192.png":"3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b","/logo512.png":"ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331","/manifest.json":"aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/asset-manifest.json":"4e3627b56d46746179c3b495d92871a943691e9ea8c9fd13e79471ee9e5b865f","/index.html":"3c01e376bbef13a2feb2648dd6df752cbb2d7c496d560fd528f5b44b3bd9e03d","/static/js/787.7d87110b.chunk.js":"308bffc580815fac9deaf4e2f02bf85641807def82bea8128c23945e42b26eae","/static/js/main.dbb6ddef.js.LICENSE.txt":"f3d94de3dd868a790f5618fd9dc106f2ab2e45151a76a6b2090f0a9c6820c134","/static/js/787.7d87110b.chunk.js.map":"50445a7910800b20010390add1aac8dee2ff896979ac56714e803b1ba3ba5fb7","/static/css/main.4fca6977.css.map":"f42cda428154c79f7a5e308f388f4ce573246c7c65167c781f2500eace335715","/static/css/main.4fca6977.css":"fde074461d4990fafe52b2f7dcfd2df6457bb52688af11f2d3a2a069a5c9680d","/static/js/main.dbb6ddef.js":"b7815a9b55e47ad4143d5fd2327d9ef904069d637aea77935d867aa0e210da47","/static/js/main.dbb6ddef.js.map":"3b0d6eeb88d01f4aab317ce2aeca6038819915768c436c1fc00c7edcb35965d9"}}
+[debug] [2022-10-27T16:04:48.194Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/403138194841/sites/mecedu-f8fff/versions/cae5a871af1a608e:populateFiles 200
+[debug] [2022-10-27T16:04:48.194Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/403138194841/sites/mecedu-f8fff/versions/cae5a871af1a608e:populateFiles {"uploadRequiredHashes":["3b0d6eeb88d01f4aab317ce2aeca6038819915768c436c1fc00c7edcb35965d9","b7815a9b55e47ad4143d5fd2327d9ef904069d637aea77935d867aa0e210da47","3c01e376bbef13a2feb2648dd6df752cbb2d7c496d560fd528f5b44b3bd9e03d","4e3627b56d46746179c3b495d92871a943691e9ea8c9fd13e79471ee9e5b865f"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files"}
+[debug] [2022-10-27T16:04:48.195Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/3b0d6eeb88d01f4aab317ce2aeca6038819915768c436c1fc00c7edcb35965d9 [none]
+[debug] [2022-10-27T16:04:48.195Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/3b0d6eeb88d01f4aab317ce2aeca6038819915768c436c1fc00c7edcb35965d9 [stream]
+[debug] [2022-10-27T16:04:48.196Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/b7815a9b55e47ad4143d5fd2327d9ef904069d637aea77935d867aa0e210da47 [none]
+[debug] [2022-10-27T16:04:48.196Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/b7815a9b55e47ad4143d5fd2327d9ef904069d637aea77935d867aa0e210da47 [stream]
+[debug] [2022-10-27T16:04:48.197Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/3c01e376bbef13a2feb2648dd6df752cbb2d7c496d560fd528f5b44b3bd9e03d [none]
+[debug] [2022-10-27T16:04:48.197Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/3c01e376bbef13a2feb2648dd6df752cbb2d7c496d560fd528f5b44b3bd9e03d [stream]
+[debug] [2022-10-27T16:04:48.197Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/4e3627b56d46746179c3b495d92871a943691e9ea8c9fd13e79471ee9e5b865f [none]
+[debug] [2022-10-27T16:04:48.197Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/4e3627b56d46746179c3b495d92871a943691e9ea8c9fd13e79471ee9e5b865f [stream]
+[debug] [2022-10-27T16:04:48.198Z] [hosting][populate queue][FINAL] {"max":1437,"min":1437,"avg":1437,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1440}
+[debug] [2022-10-27T16:04:48.198Z] [hosting] uploads queued: 4
+[debug] [2022-10-27T16:04:50.220Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/3c01e376bbef13a2feb2648dd6df752cbb2d7c496d560fd528f5b44b3bd9e03d 200
+[debug] [2022-10-27T16:04:50.221Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/3c01e376bbef13a2feb2648dd6df752cbb2d7c496d560fd528f5b44b3bd9e03d [stream]
+[debug] [2022-10-27T16:04:50.670Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/4e3627b56d46746179c3b495d92871a943691e9ea8c9fd13e79471ee9e5b865f 200
+[debug] [2022-10-27T16:04:50.671Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/4e3627b56d46746179c3b495d92871a943691e9ea8c9fd13e79471ee9e5b865f [stream]
+[debug] [2022-10-27T16:04:50.783Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/b7815a9b55e47ad4143d5fd2327d9ef904069d637aea77935d867aa0e210da47 200
+[debug] [2022-10-27T16:04:50.783Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/b7815a9b55e47ad4143d5fd2327d9ef904069d637aea77935d867aa0e210da47 [stream]
+[debug] [2022-10-27T16:04:50.828Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/3b0d6eeb88d01f4aab317ce2aeca6038819915768c436c1fc00c7edcb35965d9 200
+[debug] [2022-10-27T16:04:50.828Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/cae5a871af1a608e/files/3b0d6eeb88d01f4aab317ce2aeca6038819915768c436c1fc00c7edcb35965d9 [stream]
+[debug] [2022-10-27T16:04:50.828Z] [hosting][upload queue][FINAL] {"max":2634,"min":2027,"avg":2431.5,"active":0,"complete":4,"success":4,"errored":0,"retried":0,"total":4,"elapsed":2634}
+[info] +  hosting[mecedu-f8fff]: file upload complete 
+[debug] [2022-10-27T16:04:50.831Z] [hosting] deploy completed after 4378ms
+[debug] [2022-10-27T16:04:50.836Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "mecedu-f8fff"
+    },
+    "version": "projects/403138194841/sites/mecedu-f8fff/versions/cae5a871af1a608e"
+  }
+]
+[info] i  hosting[mecedu-f8fff]: finalizing version... 
+[debug] [2022-10-27T16:04:50.839Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions/cae5a871af1a608e updateMask=status%2Cconfig
+[debug] [2022-10-27T16:04:50.839Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions/cae5a871af1a608e {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2022-10-27T16:08:05.446Z] ----------------------------------------------------------------------
+[debug] [2022-10-27T16:08:05.448Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Laptop point\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-10-27T16:08:05.448Z] CLI Version:   11.15.0
+[debug] [2022-10-27T16:08:05.448Z] Platform:      win32
+[debug] [2022-10-27T16:08:05.448Z] Node Version:  v16.17.1
+[debug] [2022-10-27T16:08:05.449Z] Time:          Thu Oct 27 2022 22:08:05 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-10-27T16:08:05.449Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-27T16:08:05.517Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-27T16:08:05.517Z] > authorizing via signed-in user (uddinmohammadfoysal981@gmail.com)
+[debug] [2022-10-27T16:08:05.518Z] [iam] checking project mecedu-f8fff for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-10-27T16:08:05.520Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions [none]
+[debug] [2022-10-27T16:08:05.520Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions x-goog-quota-user=projects/mecedu-f8fff
+[debug] [2022-10-27T16:08:05.520Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-10-27T16:08:07.005Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions 200
+[debug] [2022-10-27T16:08:07.005Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-10-27T16:08:07.006Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mecedu-f8fff [none]
+[debug] [2022-10-27T16:08:07.604Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mecedu-f8fff 200
+[debug] [2022-10-27T16:08:07.604Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mecedu-f8fff {"projectId":"mecedu-f8fff","projectNumber":"403138194841","displayName":"mecEdu","name":"projects/mecedu-f8fff","resources":{"hostingSite":"mecedu-f8fff"},"state":"ACTIVE","etag":"1_5f8f6a91-c75f-47ff-b4a8-4e897bbf16dc"}
+[info] 
+[info] === Deploying to 'mecedu-f8fff'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-10-27T16:08:07.609Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions [none]
+[debug] [2022-10-27T16:08:07.610Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-10-27T16:08:09.420Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions 200
+[debug] [2022-10-27T16:08:09.420Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions {"name":"projects/403138194841/sites/mecedu-f8fff/versions/078d5813003e9537","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[mecedu-f8fff]: beginning deploy... 
+[info] i  hosting[mecedu-f8fff]: found 14 files in build 
+[debug] [2022-10-27T16:08:09.430Z] [hosting] uploading with 200 concurrency
+[debug] [2022-10-27T16:08:09.435Z] [hosting] hash cache [YnVpbGQ] stored for 14 files
+[debug] [2022-10-27T16:08:09.435Z] [hosting][hash queue][FINAL] {"max":2,"min":0,"avg":0,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":3}
+[debug] [2022-10-27T16:08:09.436Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/403138194841/sites/mecedu-f8fff/versions/078d5813003e9537:populateFiles [none]
+[debug] [2022-10-27T16:08:09.436Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/403138194841/sites/mecedu-f8fff/versions/078d5813003e9537:populateFiles {"files":{"/asset-manifest.json":"4e3627b56d46746179c3b495d92871a943691e9ea8c9fd13e79471ee9e5b865f","/favicon.ico":"eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9","/index.html":"3c01e376bbef13a2feb2648dd6df752cbb2d7c496d560fd528f5b44b3bd9e03d","/logo192.png":"3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b","/logo512.png":"ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331","/manifest.json":"aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/static/css/main.4fca6977.css":"fde074461d4990fafe52b2f7dcfd2df6457bb52688af11f2d3a2a069a5c9680d","/static/css/main.4fca6977.css.map":"f42cda428154c79f7a5e308f388f4ce573246c7c65167c781f2500eace335715","/static/js/787.7d87110b.chunk.js":"308bffc580815fac9deaf4e2f02bf85641807def82bea8128c23945e42b26eae","/static/js/787.7d87110b.chunk.js.map":"50445a7910800b20010390add1aac8dee2ff896979ac56714e803b1ba3ba5fb7","/static/js/main.dbb6ddef.js":"b7815a9b55e47ad4143d5fd2327d9ef904069d637aea77935d867aa0e210da47","/static/js/main.dbb6ddef.js.LICENSE.txt":"f3d94de3dd868a790f5618fd9dc106f2ab2e45151a76a6b2090f0a9c6820c134","/static/js/main.dbb6ddef.js.map":"3b0d6eeb88d01f4aab317ce2aeca6038819915768c436c1fc00c7edcb35965d9"}}
+[debug] [2022-10-27T16:12:15.070Z] ----------------------------------------------------------------------
+[debug] [2022-10-27T16:12:15.072Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Laptop point\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-10-27T16:12:15.073Z] CLI Version:   11.15.0
+[debug] [2022-10-27T16:12:15.073Z] Platform:      win32
+[debug] [2022-10-27T16:12:15.073Z] Node Version:  v16.17.1
+[debug] [2022-10-27T16:12:15.074Z] Time:          Thu Oct 27 2022 22:12:15 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-10-27T16:12:15.074Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-27T16:12:15.144Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-27T16:12:15.145Z] > authorizing via signed-in user (uddinmohammadfoysal981@gmail.com)
+[debug] [2022-10-27T16:12:15.145Z] [iam] checking project mecedu-f8fff for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-10-27T16:12:15.147Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions [none]
+[debug] [2022-10-27T16:12:15.147Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions x-goog-quota-user=projects/mecedu-f8fff
+[debug] [2022-10-27T16:12:15.147Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-10-27T16:12:16.986Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions 200
+[debug] [2022-10-27T16:12:16.987Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mecedu-f8fff:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-10-27T16:12:16.987Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mecedu-f8fff [none]
+[debug] [2022-10-27T16:12:17.826Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mecedu-f8fff 200
+[debug] [2022-10-27T16:12:17.827Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mecedu-f8fff {"projectId":"mecedu-f8fff","projectNumber":"403138194841","displayName":"mecEdu","name":"projects/mecedu-f8fff","resources":{"hostingSite":"mecedu-f8fff"},"state":"ACTIVE","etag":"1_5f8f6a91-c75f-47ff-b4a8-4e897bbf16dc"}
+[info] 
+[info] === Deploying to 'mecedu-f8fff'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-10-27T16:12:17.836Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions [none]
+[debug] [2022-10-27T16:12:17.837Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-10-27T16:12:19.693Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions 200
+[debug] [2022-10-27T16:12:19.694Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions {"name":"projects/403138194841/sites/mecedu-f8fff/versions/96ed7c6ab5b759e4","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[mecedu-f8fff]: beginning deploy... 
+[info] i  hosting[mecedu-f8fff]: found 14 files in build 
+[debug] [2022-10-27T16:12:19.716Z] [hosting] uploading with 200 concurrency
+[debug] [2022-10-27T16:12:19.723Z] [hosting] hash cache [YnVpbGQ] stored for 14 files
+[debug] [2022-10-27T16:12:19.723Z] [hosting][hash queue][FINAL] {"max":2,"min":1,"avg":1,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":4}
+[debug] [2022-10-27T16:12:19.723Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/403138194841/sites/mecedu-f8fff/versions/96ed7c6ab5b759e4:populateFiles [none]
+[debug] [2022-10-27T16:12:19.724Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/403138194841/sites/mecedu-f8fff/versions/96ed7c6ab5b759e4:populateFiles {"files":{"/asset-manifest.json":"4e3627b56d46746179c3b495d92871a943691e9ea8c9fd13e79471ee9e5b865f","/favicon.ico":"eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9","/index.html":"3c01e376bbef13a2feb2648dd6df752cbb2d7c496d560fd528f5b44b3bd9e03d","/logo192.png":"3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b","/logo512.png":"ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331","/manifest.json":"aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/static/css/main.4fca6977.css":"fde074461d4990fafe52b2f7dcfd2df6457bb52688af11f2d3a2a069a5c9680d","/static/css/main.4fca6977.css.map":"f42cda428154c79f7a5e308f388f4ce573246c7c65167c781f2500eace335715","/static/js/787.7d87110b.chunk.js":"308bffc580815fac9deaf4e2f02bf85641807def82bea8128c23945e42b26eae","/static/js/787.7d87110b.chunk.js.map":"50445a7910800b20010390add1aac8dee2ff896979ac56714e803b1ba3ba5fb7","/static/js/main.dbb6ddef.js":"b7815a9b55e47ad4143d5fd2327d9ef904069d637aea77935d867aa0e210da47","/static/js/main.dbb6ddef.js.LICENSE.txt":"f3d94de3dd868a790f5618fd9dc106f2ab2e45151a76a6b2090f0a9c6820c134","/static/js/main.dbb6ddef.js.map":"3b0d6eeb88d01f4aab317ce2aeca6038819915768c436c1fc00c7edcb35965d9"}}
+[debug] [2022-10-27T16:12:21.131Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/403138194841/sites/mecedu-f8fff/versions/96ed7c6ab5b759e4:populateFiles 200
+[debug] [2022-10-27T16:12:21.131Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/403138194841/sites/mecedu-f8fff/versions/96ed7c6ab5b759e4:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/mecedu-f8fff/versions/96ed7c6ab5b759e4/files"}
+[debug] [2022-10-27T16:12:21.132Z] [hosting][populate queue][FINAL] {"max":1410,"min":1410,"avg":1410,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1411}
+[debug] [2022-10-27T16:12:21.132Z] [hosting] uploads queued: 0
+[debug] [2022-10-27T16:12:21.132Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1666887141132}
+[info] +  hosting[mecedu-f8fff]: file upload complete 
+[debug] [2022-10-27T16:12:21.134Z] [hosting] deploy completed after 1434ms
+[debug] [2022-10-27T16:12:21.138Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "mecedu-f8fff"
+    },
+    "version": "projects/403138194841/sites/mecedu-f8fff/versions/96ed7c6ab5b759e4"
+  }
+]
+[info] i  hosting[mecedu-f8fff]: finalizing version... 
+[debug] [2022-10-27T16:12:21.143Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions/96ed7c6ab5b759e4 updateMask=status%2Cconfig
+[debug] [2022-10-27T16:12:21.143Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mecedu-f8fff/versions/96ed7c6ab5b759e4 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
