@@ -6,12 +6,12 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import RightSideNav from '../RightSideNav/RightSideNav';
 
 const Header = () => {
-    const {user, logOut} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     const handleLogOut = () => {
         console.log("logout clicked")
         logOut()
-        .then( () => {} )
-        .catch(error => console.error(error))
+            .then(() => { })
+            .catch(error => console.error(error))
     }
     return (
         <div className="navbar bg-primary text-primary-content mb-4">
@@ -37,28 +37,33 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal p-0 items-center">
+                <ul className="menu menu-horizontal p-0 items-center">
                     <li>
                         {
                             user?.uid ?
-                            <>
-                                <span>{user?.displayName}</span>
-                                <Link onClick={handleLogOut}>Log out</Link>
-                            </>
-                            :
-                            <>
-                                <Link to='/login'>Login</Link>
-                                <Link to='/register'>Register</Link>
-                            </>
+                                <>
+                                    <Link onClick={handleLogOut}>Log out</Link>
+                                </>
+                                :
+                                <>
+                                    <Link to='/login'>Login</Link>
+                                    <Link to='/register'>Register</Link>
+                                </>
                         }
                     </li>
                     <li>
                         {user?.photoURL ?
                             <div className=''>
-                                <img className='w-10 rounded-full' src={user?.photoURL} alt="" />
+                                <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                                    <img className='w-10 rounded-full' src={user?.photoURL} alt="" />
+                                </div>
+
                             </div>
                             : <FaUser className='text-white'></FaUser>
                         }
+                    </li>
+                    <li>
+                        <input type="checkbox" className="toggle" />
                     </li>
                 </ul>
             </div>
