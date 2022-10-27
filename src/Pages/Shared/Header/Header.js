@@ -52,15 +52,17 @@ const Header = () => {
                         }
                     </li>
                     <li>
-                        {user?.photoURL ?
-                            <div className=''>
-                                <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
-                                    <img className='w-10 rounded-full' src={user?.photoURL} alt="" />
-                                </div>
+                        <Link to='/profile'>
+                            {user?.photoURL ?
+                                <div className=''>
+                                    <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                                        <img className='w-10 rounded-full' src={user?.photoURL} alt="" />
+                                    </div>
 
-                            </div>
-                            : <FaUser className='text-white'></FaUser>
-                        }
+                                </div>
+                                : <FaUser className=''></FaUser>
+                            }
+                        </Link>
                     </li>
                     <li>
                         <input type="checkbox" className="toggle" />
