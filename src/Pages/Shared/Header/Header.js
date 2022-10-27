@@ -8,6 +8,7 @@ import RightSideNav from '../RightSideNav/RightSideNav';
 const Header = () => {
     const {user, logOut} = useContext(AuthContext)
     const handleLogOut = () => {
+        console.log("logout clicked")
         logOut()
         .then( ()=>{})
         .catch(error => console.error(error))
