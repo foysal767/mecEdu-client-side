@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaUser, FaUserAlt } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
@@ -10,7 +10,7 @@ const Header = () => {
     const handleLogOut = () => {
         console.log("logout clicked")
         logOut()
-        .then( ()=>{})
+        .then( () => {} )
         .catch(error => console.error(error))
     }
     return (
@@ -43,7 +43,7 @@ const Header = () => {
                             user?.uid ?
                             <>
                                 <span>{user?.displayName}</span>
-                                <Link to={handleLogOut}>Log out</Link>
+                                <Link onClick={handleLogOut}>Log out</Link>
                             </>
                             :
                             <>
