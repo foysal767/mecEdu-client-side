@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useContext } from 'react';
 import { useEffect } from 'react';
@@ -7,8 +7,9 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const RightSideNav = () => {
-    const {providerLogin} = useContext(AuthContext)
+    const {providerLogin, githubProviderLogin} = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider()
 
     const [courses, setCourses] = useState([]);
     useEffect(() => {
@@ -25,11 +26,19 @@ const RightSideNav = () => {
         })
         .catch(error => console.error(error))
     }
+    const handleGithubSignIn = () => {
+        githubProviderLogin(githubProvider)
+        .then(result => {
+            const user = result.user;
+            console.log(user)
+        })
+        .catch(e => console.error(e))
+    }
     return (
         <div className='mt-4'>
             <div className="btn-group btn-group-vertical">
                 <button onClick={handleGoogleSignIn} className="btn btn-outline mb-2 justify-between"> Login with Google</button>
-                <button className="btn btn-outline btn-primary mb-2 justify-between"> Login with Github</button>
+                <button onClick={handleGithubSignIn} className="btn btn-outline btn-primary mb-2 justify-between"> Login with Github</button>
             </div>
             <h1 className='md:text-2xl font-semibold text-green-400 mb-4 md:text-center'>All Courses</h1>
         {
