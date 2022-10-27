@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
-const CourseDetails = () => {
-    const courseDetails = useLoaderData();
-    const { title, author, department, details, image_url, rating, total_enroll } = courseDetails;
-    console.log(courseDetails)
+const CourseInfo = () => {
+    const courseInfo = useLoaderData();
+    const { title, author, department, details, image_url, rating, total_enroll } = courseInfo;
     return (
         <div className="card w-10/12 mx-auto bg-base-200 shadow-xl">
             <div className='w-10/12 mx-auto items-center flex my-4 justify-between'>
@@ -29,4 +28,4 @@ const CourseDetails = () => {
     );
 };
 
-export default CourseDetails;
+export default CourseInfo;

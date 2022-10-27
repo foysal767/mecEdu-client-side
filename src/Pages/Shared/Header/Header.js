@@ -1,8 +1,17 @@
 import React from 'react';
+import { FaUser, FaUserAlt } from 'react-icons/fa';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import RightSideNav from '../RightSideNav/RightSideNav';
 
 const Header = () => {
+    const {user, logOut} = useContext(AuthContext)
+    const handleLogOut = () => {
+        logOut()
+        .then( ()=>{})
+        .catch(error => console.error(error))
+    }
     return (
         <div className="navbar bg-primary text-primary-content mb-4">
             <div className="navbar-start">
@@ -12,8 +21,9 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary text-primary-content rounded-box w-52">
                         <li><Link to='/'>Courses</Link></li>
+                        <li><Link to='/faq'>FAQ</Link></li>
                         <li><Link to='/blog'>Blogs</Link></li>
-                        <li><RightSideNav></RightSideNav></li>
+                        <RightSideNav></RightSideNav>
                     </ul>
                 </div>
                 <Link to='/' className='btn btn-ghost normal-case text-xl'>MecEdu</Link>
@@ -22,13 +32,32 @@ const Header = () => {
                 <ul className="menu menu-horizontal p-0">
                     <li><Link to='/'>Courses</Link></li>
                     <li><Link to='/blog'>Blogs</Link></li>
+                    <li><Link to='/faq'>FAQ</Link></li>
                 </ul>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal p-0 items-center">
+            <ul className="menu menu-horizontal p-0 items-center">
                     <li>
+                        {
+                            user?.uid ?
+                            <>
+                                <span>{user?.displayName}</span>
+                                <Link to={handleLogOut}>Log out</Link>
+                            </>
+                            :
+                            <>
+                                <Link to='/login'>Login</Link>
+                                <Link to='/register'>Register</Link>
+                            </>
+                        }
                     </li>
                     <li>
+                        {user?.photoURL ?
+                            <div className=''>
+                                <img className='w-10 rounded-full' src={user?.photoURL} alt="" />
+                            </div>
+                            : <FaUser className='text-white'></FaUser>
+                        }
                     </li>
                 </ul>
             </div>
