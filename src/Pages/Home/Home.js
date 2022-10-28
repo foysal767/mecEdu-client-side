@@ -1,20 +1,12 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
-import Courses from '../Courses/Courses';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-    const CourseDetails = useLoaderData();
     return (
-        <div className='text-center'>
-            <h2 className='text-4xl font-semibold mb-6'>Total Course: {CourseDetails.length}</h2>
-            <div className='grid grid-cols-1 md:grid-cols-2 mx-auto'>
-            {
-                CourseDetails.map(course => <Courses
-                key={course._id}
-                course={course}
-                ></Courses>)
-            }
-            </div>
+        <div className='w-full text-center items-center mx-auto my-auto mt-32'>
+            <h1 className='mt-8 text-4xl font-bold'>Learning With MecEdu</h1>
+            <p className='text-xl mt-8 font-medium'>You Can Purchase Our featured Courses at Any Time</p>
+            <Link to='/all-course'><button className='mt-10 btn btn-outline'>Get Started</button></Link>
         </div>
     );
 };

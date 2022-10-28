@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Profile from "../../Others/Profile";
+import AllCourse from "../../Pages/AllCourse/AllCourse";
 import Blog from "../../Pages/Blog/Blog";
 import CheckOut from "../../Pages/CheckOut/CheckOut";
 import CourseDetails from "../../Pages/CourseDetails/CourseDetails";
-import CourseInfo from "../../Pages/CourseInfo/CourseInfo";
 import Error from "../../Pages/Error/Error";
 import Faq from "../../Pages/Faq/Faq";
 import Home from "../../Pages/Home/Home";
@@ -19,17 +19,21 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>,
+                element: <Home></Home>
+            },
+            {
+                path: '/all-course',
+                element: <AllCourse></AllCourse>,
                 loader: () => fetch('https://mec-edu-server-foysal767.vercel.app/courses-details')
             },
             {
-                path: '/course-category/:id',
+                path: '/course-category/:id/course-details',
                 element: <CourseDetails></CourseDetails>,
                 loader: ({ params }) => fetch(`https://mec-edu-server-foysal767.vercel.app/course-category/${params.id}`)
             },
             {
-                path: '/details/:id',
-                element: <CourseInfo></CourseInfo>,
+                path: '/course/:id/course-details',
+                element: <CourseDetails></CourseDetails>,
                 loader: ({ params }) => fetch(`https://mec-edu-server-foysal767.vercel.app/course/${params.id}`)
             },
             {
@@ -41,8 +45,14 @@ export const routes = createBrowserRouter([
                 element: <Blog></Blog>
             },
             {
-                path: '/checkout',
-                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
+                path: '/course-category/:id/checkout',
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://mec-edu-server-foysal767.vercel.app/course-category/${params.id}`)
+            },
+            {
+                path: '/course/:id/checkout',
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://mec-edu-server-foysal767.vercel.app/course/${params.id}`)
             },
             {
                 path: '/login',
@@ -57,6 +67,7 @@ export const routes = createBrowserRouter([
                 element: <PrivateRoute><Profile></Profile></PrivateRoute>
             }
         ]
+
     },
     {
         path: '*',

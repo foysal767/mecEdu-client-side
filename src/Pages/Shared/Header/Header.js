@@ -8,7 +8,6 @@ import RightSideNav from '../RightSideNav/RightSideNav';
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
     const handleLogOut = () => {
-        console.log("logout clicked")
         logOut()
             .then(() => { })
             .catch(error => console.error(error))
@@ -21,9 +20,34 @@ const Header = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary text-primary-content rounded-box w-52">
-                        <li><Link to='/'>Courses</Link></li>
+                        <li><Link to='/all-course'>Courses</Link></li>
                         <li><Link to='/faq'>FAQ</Link></li>
                         <li><Link to='/blog'>Blogs</Link></li>
+                        <li>
+                            {
+                                user?.uid ?
+                                    <>
+                                        <Link onClick={handleLogOut}>Log out</Link>
+                                    </>
+                                    :
+                                    <>
+                                        <Link to='/login'>Login</Link>
+                                        <Link to='/register'>Register</Link>
+                                    </>
+                            }
+                        </li>
+                        <li>
+                            <Link to='/profile'>
+                                {user?.photoURL ?
+                                    <div className=''>
+                                        <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                                            <img className='w-10 rounded-full' src={user?.photoURL} alt="" />
+                                        </div>
+                                    </div>
+                                    : <FaUser className=''></FaUser>
+                                }
+                            </Link>
+                        </li>
                         <RightSideNav></RightSideNav>
                     </ul>
                 </div>
@@ -31,7 +55,7 @@ const Header = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
-                    <li><Link to='/'>Courses</Link></li>
+                    <li><Link to='/all-course'>Courses</Link></li>
                     <li><Link to='/blog'>Blogs</Link></li>
                     <li><Link to='/faq'>FAQ</Link></li>
                 </ul>
